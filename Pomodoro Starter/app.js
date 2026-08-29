@@ -22,7 +22,7 @@ function startTimer() {
 
 function stopTimer() {
     startButton.disabled = false
-    stopButton.disbaled = true
+    stopButton.disabled = true
     resetButton.disabled = false
 
     savedTime += Date.now() - startTime
@@ -64,10 +64,10 @@ function updateTimer() {
         minutesText = minutesText.toString().padStart(2, '0')
     }
 
-    timerMilliSeconds.innerHTML = millisLeft
-    timerSeconds.innerHTML = secondsLeft
-    timerMinutes.innerHTML = minutesLeft
-    
+    timerMilliSeconds.innerHTML = millisText
+    timerSeconds.innerHTML = secondsText
+    timerMinutes.innerHTML = minutesText
+
     if (cancelId) {
         cancelId = requestAnimationFrame(updateTimer)
     }
